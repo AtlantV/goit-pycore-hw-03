@@ -10,6 +10,3 @@ d = input("Please insert date (yyyy-mm-dd): ")
 result = get_days_from_today(d)
 
 print(f"Difference in days: {result}")
-
-
-
