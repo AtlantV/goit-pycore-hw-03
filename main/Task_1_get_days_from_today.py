@@ -1,16 +1,19 @@
 from datetime import datetime
 
 def get_days_from_today(d):
-    try: #перевірка на формат
-        input_date = datetime.strptime(d, "%Y-%m-%d").date() 
-    except ValueError: 
-        return "Неправильний формат дати. Використовуйте yyyy-mm-dd."
-    
+    input_date = datetime.strptime(d, "%Y-%m-%d").date() 
     today = datetime.today().date()
     delta = today - input_date
     return delta.days
 
-d = input("Please insert date (yyyy-mm-dd): ")
-result = get_days_from_today(d)
+while True:
+    in_date = input("Please insert date (yyyy-mm-dd): ")
+    try:
+        result = get_days_from_today(in_date)
+        print(f"Difference in days: {result}")
+        break #завершення у разі правильної дати
+    except ValueError:
+        print("Incorrect date fomat, please use 'yyyy-mm-dd':")
 
-print(f"Difference in days: {result}")
+
+
