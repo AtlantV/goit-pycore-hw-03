@@ -1,7 +1,11 @@
 from datetime import datetime
 
 def get_days_from_today(d):
-    input_date = datetime.strptime(d, "%Y-%m-%d").date()
+    try: #перевірка на формат
+        input_date = datetime.strptime(d, "%Y-%m-%d").date() 
+    except ValueError: 
+        return "Неправильний формат дати. Використовуйте yyyy-mm-dd."
+    
     today = datetime.today().date()
     delta = today - input_date
     return delta.days
