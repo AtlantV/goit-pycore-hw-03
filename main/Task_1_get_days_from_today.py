@@ -10,6 +10,3 @@ d = input("Please insert date (yyyy-mm-dd): ")
 result = get_days_from_today(d)
 
 print(f"Difference in days: {result}")
-
-git remote remove origin
-git remote add origin git@github.com:AtlantV/goit-pycore-hw-03.git
